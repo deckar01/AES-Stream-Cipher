@@ -256,9 +256,9 @@ void InvMixColumns(byte * state){
 	byte temp[4];
 	
 	counter r, c;
-	for(c = 0 ; c < Nb; c++){
+	for(c = 0 ; c < Nb; c += 1){
 		
-		for(r = 0; r < 4;r++) temp[r] = state[4*r+c];
+		for(r = 0; r < 4; r += 1) temp[r] = state[4*r+c];
 		
 		state[c] = multiply14(temp[0])^multiply11(temp[1])^multiply13(temp[2])^multiply9(temp[3]);
 		state[4+c] = multiply9(temp[0])^multiply14(temp[1])^multiply11(temp[2])^multiply13(temp[3]);
